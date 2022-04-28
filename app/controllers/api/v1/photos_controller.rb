@@ -13,6 +13,7 @@ class Api::V1::PhotosController < ApplicationController
       else
         # flash[:error] = @photo.errors.full_messages
         puts "didn't save"
+        puts "phot0: #{@photo.errors.full_messages}"
       end
       render json: @photo
     end
