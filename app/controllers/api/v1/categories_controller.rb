@@ -6,8 +6,12 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def create
-      @category = Category.create(name: params[:name])
-      render json: @category
+      @category = Category.new(name: params[:name])
+      if @category.save
+        render json: @category
+      else 
+        puts @category.errors.full_messages
+      end
     end
 
   def photos
