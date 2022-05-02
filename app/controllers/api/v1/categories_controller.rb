@@ -9,6 +9,8 @@ class Api::V1::CategoriesController < ApplicationController
       @category = Category.new(name: params[:name])
       if @category.save
         render json: @category
+        puts "category saved"
+        puts Category.all.count
       else 
         puts @category.errors.full_messages
       end
