@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-    #has_many :photos
+    has_many :photos
 
     def sort_photos
       self.photos.all.sort()
