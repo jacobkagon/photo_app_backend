@@ -9,4 +9,11 @@ class Api::V1::CategoriesController < ApplicationController
       @category = Category.create(name: params[:name])
       render json: @category
     end
+
+  def photos
+    category = Category.find(params[:id])
+    @photos = category.render_photos
+    render json: @photos
+
+  end
 end
