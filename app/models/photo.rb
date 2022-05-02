@@ -1,5 +1,5 @@
 class Photo < ApplicationRecord
-  belongs_to :category
+ # belongs_to :category
 
   # def all
   #   Photo.all.sort(:desc)
