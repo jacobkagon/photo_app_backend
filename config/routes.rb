@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :photos, only: [:index, :create]
       resources :categories, only: [:index, :create]
 
-      get ':id/photos', to: 'categories#photos'
+      get 'categories/:id', to: 'categories#photos'
     end
   end
 end
