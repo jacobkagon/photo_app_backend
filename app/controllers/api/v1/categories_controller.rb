@@ -18,9 +18,8 @@ class Api::V1::CategoriesController < ApplicationController
     end
 
   def photos
-    category = Category.find(params[:id])
-    @photos = category.sort_photos
-    render json: @photos
+    @category = Category.find(params[:id])
+    render json: @category.photos
 
   end
 end
